@@ -8,11 +8,13 @@ public class GrillMOve : MonoBehaviour
     public int x, y;
     public float speed;
     public bool canMove;
+    
     private Rigidbody2D rb;
+
     void Start()
     {
         canMove = true;
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
     private void Update()
     {
@@ -44,11 +46,12 @@ public class GrillMOve : MonoBehaviour
         Vector2 position = CalcularDireccion(x,y);
         float velocity = speed;
         transform.position = Vector2.MoveTowards(transform.position, position, velocity);
-        //rb.gravityScale = 0f;
+        rb.gravityScale = 0f;
     }
 
     public Vector2 CalcularDireccion(int x, int y)
     {
         return new Vector2(x + 0.5f, y + 0.5f);
     }
+
 }
