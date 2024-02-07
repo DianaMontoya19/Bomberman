@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class Probarcolision : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class Probarcolision : MonoBehaviour
         if(hitInfo)
         {
             Debug.Log("entro");
+            tilemap.SetTile(position, null);
+            hitInfo.point;
         }
         //if (hitInfo.collider != null)
         //{
