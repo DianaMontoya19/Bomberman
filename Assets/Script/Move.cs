@@ -6,11 +6,11 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class Move : MonoBehaviour
 {
-    public Transform post;
+    public GameObject post;
     private void Update()
     {
-        post = GetComponent<Transform>();
-        post.position = transform.position;
+       
+        transform.position = post.transform.position+ new Vector3(0.5f, 0.5f,0f);
     }
 
 }

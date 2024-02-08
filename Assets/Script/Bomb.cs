@@ -27,9 +27,10 @@ public class Bomb : MonoBehaviour
 
     //private void Start()
     //{
-    //  anim = GetComponent<Animator>();
-    //  move = GetComponent<GrillMOve>();
-
+    //    //  anim = GetComponent<Animator>();
+    //    //  move = GetComponent<GrillMOve>();
+    //    imagen.gameObject.SetActive(false);
+        
     //}
 
 
@@ -45,11 +46,14 @@ public class Bomb : MonoBehaviour
             GameObject NewObject = Instantiate(bomb, pos, Quaternion.identity);
 
             bomb = NewObject;
+            Invoke("activar", 2f);
+            Invoke("Block", 2.5f);
 
-            Invoke("activar", 3f);
+           
+            Invoke("desactivar", 4f);
             
 
-            Invoke("Block", 2f);
+            
 
             //Block();
 
@@ -63,7 +67,7 @@ public class Bomb : MonoBehaviour
 
     public void Block()
     {
-        imagen.gameObject.SetActive(false);
+        
         Vector2 Origin = bomb.transform.position;
         Vector2 DirRight = Vector2.right;
         Vector2 DirLeft = Vector2.left;
@@ -113,15 +117,17 @@ public class Bomb : MonoBehaviour
             tilemap.SetTile(position2, null);
 
         }
+       
 
     }
     public void activar()
     {
-           
-        //transform.position = bomb.transform.position;
-        
-        //imagen.transform.position = transform.position;
+        transform.position = bomb.transform.position;
         imagen.gameObject.SetActive(true);
 
+    }
+    public void desactivar()
+    {
+        imagen.gameObject.SetActive(false);
     }
 }
