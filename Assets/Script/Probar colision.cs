@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
+using static UnityEditor.PlayerSettings;
 
 public class Probarcolision : MonoBehaviour
 {
@@ -23,9 +24,12 @@ public class Probarcolision : MonoBehaviour
 
         if(hitInfo)
         {
-            Debug.Log("entro");
-            tilemap.SetTile(position, null);
-            hitInfo.point;
+            Vector3 posi = hitInfo.point;
+            Vector3Int position2 = new Vector3Int(Mathf.FloorToInt(posi.x+1), Mathf.FloorToInt(posi.y), Mathf.FloorToInt(posi.z));
+
+            //Debug.Log("entro"+ hitInfo.point);
+            tilemap.SetTile(position2, null);
+            //hitInfo.point;
         }
         //if (hitInfo.collider != null)
         //{
@@ -35,7 +39,7 @@ public class Probarcolision : MonoBehaviour
         //        Debug.Log("El rayo golpeó a: ");
         //    }
         //    // Verificar si el rayo colisionó con algo
-           
+
 
         //    // Puedes hacer más con hitInfo, como obtener la posición de impacto (hitInfo.point), etc.
         //}

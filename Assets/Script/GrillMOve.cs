@@ -8,6 +8,8 @@ public class GrillMOve : MonoBehaviour
     public int x, y;
     public float speed;
     public bool canMove;
+    public string MoveX;
+    public string MoveY;
     
     private Rigidbody2D rb;
 
@@ -18,8 +20,8 @@ public class GrillMOve : MonoBehaviour
     }
     private void Update()
     {
-        int moveX = (int) Input.GetAxis("Horizontal");
-        int moveY = (int) Input.GetAxis("Vertical");
+        int moveX = (int) Input.GetAxis(MoveX);
+        int moveY = (int) Input.GetAxis(MoveY);
 
         if(moveX != 0 && canMove)
         {
