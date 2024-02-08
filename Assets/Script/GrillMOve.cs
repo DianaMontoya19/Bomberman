@@ -25,8 +25,8 @@ public class GrillMOve : MonoBehaviour
     }
     private void Update()
     {
-        int moveX = (int) Input.GetAxis(MoveX);
-        int moveY = (int) Input.GetAxis(MoveY);
+        int moveX = (int) Input.GetAxisRaw(MoveX);
+        int moveY = (int) Input.GetAxisRaw(MoveY);
 
         if(moveX != 0 && canMove )
         {
