@@ -47,38 +47,30 @@ public class GrillMOve : MonoBehaviour
             canMove = true;
             PreviousPosition = currentPosition;
         }
-        Activar();
-
-    }
-
-    public void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Box"))
-        {
-            if (!probar)
-            {
-                transform.position = PreviousPosition;
-                Vector2 newPosition = new Vector2(transform.position.x, transform.position.y);
-
-                speed = 0;
-
-                Debug.Log("entro");
-                probar = true;
-                canMove = true;
-            }
-            
-        }
-
-    }
-    public void OnCollisionExit2D(Collision2D other)
-    {
-       
-        Invoke("Activar", 5f);
         
+
     }
 
+    //public void OnCollisionEnter2D(Collision2D other)
+    //{
+    //    if (other.gameObject.CompareTag("Box"))
+    //    {
+    //        if (!probar)
+    //        {
+    //            transform.position = PreviousPosition;
+    //            Vector2 newPosition = new Vector2(transform.position.x, transform.position.y);
 
+    //            speed = 0;
 
+    //            Debug.Log("entro");
+    //            probar = true;
+    //            canMove = true;
+    //        }
+            
+    //    }
+
+    //}
+ 
     // Update is called once per frame
     void FixedUpdate()
     {
