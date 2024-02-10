@@ -5,22 +5,23 @@ using UnityEngine.Tilemaps;
 
 public class Fire : MonoBehaviour
 {
-    public  Animator Reapear;
-    //public void Start()
-    //{
-    //    Reapear.enabled=false;
-    //}
-    private void OnCollisionEnter2D(Collision2D collision)
+    private  Animator Reapear;
+    private bool deth = false;
+    public void Start()
     {
-        if(collision.gameObject.CompareTag("Fire"))
+        Reapear=GetComponent<Animator>();
+       
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Fire"))
         {
-            Reapear.enabled = true;
-            Invoke("stop", 3f);
+            Reapear.SetTrigger("Died");
+            Debug.Log("colsiono");
+
         }
     }
 
-   private void stop()
-    {
-        Reapear.enabled=false;
-    }
 }

@@ -94,11 +94,12 @@ public class GrillMOve : MonoBehaviour
         return new Vector2(x + 0.5f, y + 0.5f);
     }
 
+
     //public void Activar()
     //{
     //    //speed = 0.025f;
     //    probar = false;
-        
+
     //}
 
 }
