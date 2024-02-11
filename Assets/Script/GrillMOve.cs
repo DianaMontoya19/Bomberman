@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
@@ -15,10 +16,18 @@ public class GrillMOve : MonoBehaviour
     public string MoveY;
     private Vector2 PreviousPosition;
     public bool probar = false;
+    public bool up = false;
+    public bool down = false;
+    public bool right = false;
+    public bool left = false;
     private bool enter = false;
     private Animator anim;
+    public LayerMask[] layerMask;
+
+    public Transform tf;
 
     private Rigidbody2D rb;
+    
 
     void Start()
     {
@@ -31,17 +40,24 @@ public class GrillMOve : MonoBehaviour
         int moveX = (int) Input.GetAxisRaw(MoveX);
         int moveY = (int) Input.GetAxisRaw(MoveY);
 
-
+       
 
         if (moveX != 0 && canMove )
         {
-           
-            x += moveX;
-            canMove = false;
-            probar = true;
-            if (moveX >= 0)
+            if (moveX <= 0 && !left)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                x += moveX;
+                canMove = false;
+                probar = true;
+                Debug.Log("iz");
+            }
+
+            if (moveX >= 0 && !right)
+            {
+                    x += moveX;
+                    canMove = false;
+                    GetComponent<SpriteRenderer>().flipX = false;
+                Debug.Log("de");
             }
             else
             {
@@ -50,18 +66,30 @@ public class GrillMOve : MonoBehaviour
             }
 
         }
-        if(moveY != 0 && canMove )
+        
+        if (moveY != 0 && canMove )
         {
-            y += moveY;
-            canMove=false;
-            
 
-            if (moveY >= 0)
+            if (moveY >= 0 && !up)
             {
+                y += moveY;
+                canMove = false;
                 enter = true;
+                Debug.Log("entro");
+              
+
+            }
+
+            if (moveY <= 0  && !down)
+            {
+                y += moveY;
+                canMove = false;
+                Debug.Log("down");
             }
 
         }
+
+
 
         Vector2 currentPosition = new Vector2(transform.position.x,transform.position.y);
 
@@ -71,13 +99,22 @@ public class GrillMOve : MonoBehaviour
             probar = false;
             enter = false;
            
-            PreviousPosition = currentPosition;
+            
+            
         }
         anim.SetBool("Activar", probar);
         anim.SetBool("Subir", enter);
 
         anim.SetFloat("VelX", moveX);
         anim.SetFloat("VelY", moveY);
+
+        up = Physics2D.Raycast(tf.position, Vector2.up, 0.5f, layerMask[0]);
+        down = Physics2D.Raycast(tf.position, Vector2.down, 1f,layerMask[1]);
+        right = Physics2D.Raycast(tf.position, Vector2.right, 1f, layerMask[1]);
+        left = Physics2D.Raycast(tf.position, Vector2.left, 1f, layerMask[1]);
+
+
+
     }
 
     void FixedUpdate()
@@ -91,9 +128,22 @@ public class GrillMOve : MonoBehaviour
 
     public Vector2 CalcularDireccion(int x, int y)
     {
-        return new Vector2(x + 0.5f, y + 0.5f);
+        return new Vector2(x + 0.5f, y + 0.6f);
     }
+    void OnDrawGizmosSelected()
+    {
+        // Draws a 5 unit long red line in front of the object  
+        Gizmos.color = Color.red;
+        Vector3 direction = tf.TransformDirection(Vector3.up)* 0.5f;
+        Vector3 direction2 = tf.TransformDirection(Vector3.down) * 1f;
+        Vector3 direction3 = tf.TransformDirection(Vector3.right) * 1f;
+        Vector3 direction4 = tf.TransformDirection(Vector3.left) * 1f;
 
+        //Gizmos.DrawRay(tf.position, direction);
+        //Gizmos.DrawRay(tf.position, direction2);
+        Gizmos.DrawRay(tf.position, direction3);
+        Gizmos.DrawRay(tf.position, direction4);
+    }
 
     //public void Activar()
     //{

@@ -10,7 +10,7 @@ public class Move : MonoBehaviour
     private void Update()
     {
        
-        transform.position = post.transform.position+ new Vector3(0.5f, 0.5f,0f);
+        transform.position = post.transform.position+ new Vector3(0f, 0f,0f);
     }
 
 }

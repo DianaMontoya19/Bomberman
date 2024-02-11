@@ -15,7 +15,7 @@ public class DestroyBlock : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         Vector2 Origin = Bomb.transform.position;
         Vector2 DirRight = Vector2.right;

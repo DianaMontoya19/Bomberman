@@ -9,10 +9,12 @@ using UnityEngine.UI;
 public class Bomb : MonoBehaviour
 {
     public GameObject Player;
-    public GameObject bomb;
-    public Image imagen;
+     public GameObject bomb;
+    public GameObject fire;
     public DestroyBlock Block;
-   
+    public string PL;
+
+
     //public Transform tf;
 
 
@@ -24,27 +26,30 @@ public class Bomb : MonoBehaviour
     void Update()
     {
 
+        float Enter = Input.GetAxisRaw(PL);
+  
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Enter!=0)
         {
 
             Vector3 pos = Player.transform.position;
 
          
-            GameObject NewObject = Instantiate(bomb, pos , Quaternion.identity);
-            
+            GameObject Pl1 = Instantiate(bomb, pos , Quaternion.identity);
 
+            //activar();
             
-            Invoke("activar", 3f);
-            Invoke("desactivar", 3.5f);
+            Invoke("activar", 2.5f);
+            Invoke("desactivar", 5f);
            
 
-            transform.position = NewObject.transform.position;
-           
-
+            transform.position = Pl1.transform.position;
+ 
         }
+ 
 
-       
+
+
 
     }
   
@@ -58,13 +63,13 @@ public class Bomb : MonoBehaviour
 
     public void activar()
     {
-        imagen.gameObject.SetActive(true);
+        fire.gameObject.SetActive(true);
         Block.enabled = true;
        
     }
     public void desactivar()
     {
-        imagen.gameObject.SetActive(false);
+        fire.gameObject.SetActive(false);
         Block.enabled = false;
     }
 
