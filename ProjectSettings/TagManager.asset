@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Box
   - Fire
+  - Pl1
+  - Door1
+  - Pl2
+  - Door2
   layers:
   - Default
   - TransparentFX

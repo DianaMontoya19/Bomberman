@@ -19,7 +19,7 @@ public class Fire : MonoBehaviour
         if (collision.gameObject.CompareTag("Fire"))
         {
             Reapear.SetTrigger("Died");
-            Debug.Log("colsiono");
+            //Debug.Log("colsiono");
 
         }
     }

@@ -26,10 +26,16 @@ public class Bomb : MonoBehaviour
     void Update()
     {
 
-        float Enter = Input.GetAxisRaw(PL);
+        //float Enter = Input.GetAxis(PL);
+
+        //if()
+        //{
+
+        //}
+        
   
 
-        if (Enter!=0)
+        if (Input.GetKeyDown(PL))
         {
 
             Vector3 pos = Player.transform.position;
@@ -39,7 +45,7 @@ public class Bomb : MonoBehaviour
 
             //activar();
             
-            Invoke("activar", 2.5f);
+            Invoke("activar", 3f);
             Invoke("desactivar", 5f);
            
 
@@ -64,13 +70,19 @@ public class Bomb : MonoBehaviour
     public void activar()
     {
         fire.gameObject.SetActive(true);
-        Block.enabled = true;
+        Invoke("block", 0.5f);
+        
        
     }
     public void desactivar()
     {
+        
         fire.gameObject.SetActive(false);
         Block.enabled = false;
+    }
+    public void block()
+    {
+        Block.enabled = true;
     }
 
 }

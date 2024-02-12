@@ -22,7 +22,7 @@ public class GrillMOve : MonoBehaviour
     public bool left = false;
     private bool enter = false;
     private Animator anim;
-    public LayerMask[] layerMask;
+    public LayerMask layerMask;
 
     public Transform tf;
 
@@ -56,8 +56,9 @@ public class GrillMOve : MonoBehaviour
             {
                     x += moveX;
                     canMove = false;
+                    probar = true;
                     GetComponent<SpriteRenderer>().flipX = false;
-                Debug.Log("de");
+                    Debug.Log("de");
             }
             else
             {
@@ -108,10 +109,10 @@ public class GrillMOve : MonoBehaviour
         anim.SetFloat("VelX", moveX);
         anim.SetFloat("VelY", moveY);
 
-        up = Physics2D.Raycast(tf.position, Vector2.up, 0.5f, layerMask[0]);
-        down = Physics2D.Raycast(tf.position, Vector2.down, 1f,layerMask[1]);
-        right = Physics2D.Raycast(tf.position, Vector2.right, 1f, layerMask[1]);
-        left = Physics2D.Raycast(tf.position, Vector2.left, 1f, layerMask[1]);
+        up = Physics2D.Raycast(tf.position, Vector2.up, 0.5f, layerMask);
+        down = Physics2D.Raycast(tf.position, Vector2.down, 1f,layerMask);
+        right = Physics2D.Raycast(tf.position, Vector2.right, 1f, layerMask);
+        left = Physics2D.Raycast(tf.position, Vector2.left, 1f, layerMask);
 
 
 
@@ -130,26 +131,21 @@ public class GrillMOve : MonoBehaviour
     {
         return new Vector2(x + 0.5f, y + 0.6f);
     }
-    void OnDrawGizmosSelected()
-    {
-        // Draws a 5 unit long red line in front of the object  
-        Gizmos.color = Color.red;
-        Vector3 direction = tf.TransformDirection(Vector3.up)* 0.5f;
-        Vector3 direction2 = tf.TransformDirection(Vector3.down) * 1f;
-        Vector3 direction3 = tf.TransformDirection(Vector3.right) * 1f;
-        Vector3 direction4 = tf.TransformDirection(Vector3.left) * 1f;
-
-        //Gizmos.DrawRay(tf.position, direction);
-        //Gizmos.DrawRay(tf.position, direction2);
-        Gizmos.DrawRay(tf.position, direction3);
-        Gizmos.DrawRay(tf.position, direction4);
-    }
-
-    //public void Activar()
+    //void OnDrawGizmosSelected()
     //{
-    //    //speed = 0.025f;
-    //    probar = false;
+    //    // Draws a 5 unit long red line in front of the object  
+    //    Gizmos.color = Color.red;
+    //    Vector3 direction = tf.TransformDirection(Vector3.up)* 0.5f;
+    //    Vector3 direction2 = tf.TransformDirection(Vector3.down) * 1f;
+    //    Vector3 direction3 = tf.TransformDirection(Vector3.right) * 1f;
+    //    Vector3 direction4 = tf.TransformDirection(Vector3.left) * 1f;
 
+    //    //Gizmos.DrawRay(tf.position, direction);
+    //    //Gizmos.DrawRay(tf.position, direction2);
+    //    Gizmos.DrawRay(tf.position, direction3);
+    //    Gizmos.DrawRay(tf.position, direction4);
     //}
+
+
 
 }
