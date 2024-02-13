@@ -47,3 +47,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Light
+    uniqueID: 2342319883
+    locked: 0
+  - name: Box
+    uniqueID: 1741901535
+    locked: 0

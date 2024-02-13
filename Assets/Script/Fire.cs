@@ -9,7 +9,7 @@ public class Fire : MonoBehaviour
     private bool deth = false;
     public void Start()
     {
-        Reapear=GetComponent<Animator>();
+        Reapear = GetComponent<Animator>();
        
 
     }
