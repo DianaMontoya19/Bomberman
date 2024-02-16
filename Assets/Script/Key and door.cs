@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
 
@@ -8,6 +9,7 @@ public class Keyanddoor : MonoBehaviour
 {
     public string Key;
     public string Door;
+    public string Win;
     public Tilemap[] tilemap;
     public bool llave = false;
 
@@ -32,6 +34,7 @@ public class Keyanddoor : MonoBehaviour
             {
                 Destroy(tilemap[1].gameObject);
                 Time.timeScale = 0f;
+                SceneManager.LoadScene(Win);
                 Debug.Log("Puerta Abierta");
             }
         }

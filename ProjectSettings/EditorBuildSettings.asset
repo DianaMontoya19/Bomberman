@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinPl1.unity
     guid: 7caf3e5bfc764994d9470367d221756b
+  - enabled: 1
+    path: Assets/Scenes/WinPl2.unity
+    guid: 59fd6b901dfeedd4897e8f46be300448
   m_configObjects: {}

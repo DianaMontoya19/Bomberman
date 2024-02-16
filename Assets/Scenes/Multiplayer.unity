@@ -7630,6 +7630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: Pl2
   Door: Door2
+  Win: WinPl2
   tilemap:
   - {fileID: 403386330}
   - {fileID: 1705044877}
@@ -11226,6 +11227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Key: Pl1
   Door: Door1
+  Win: WinPl1
   tilemap:
   - {fileID: 216621098}
   - {fileID: 1681010392}
