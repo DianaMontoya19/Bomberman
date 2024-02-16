@@ -7473,6 +7473,7 @@ MonoBehaviour:
   - {fileID: 794239430}
   - {fileID: 1328604572}
   Player: Player2
+  Gamer: {fileID: 452449730}
 --- !u!212 &452449733
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11168,6 +11169,7 @@ MonoBehaviour:
   - {fileID: 45757595}
   - {fileID: 2058565854}
   Player: Player1
+  Gamer: {fileID: 1620690501}
 --- !u!61 &1620690512
 BoxCollider2D:
   m_ObjectHideFlags: 0

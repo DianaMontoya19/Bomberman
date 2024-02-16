@@ -10,6 +10,9 @@ public class Fire : MonoBehaviour
     public   List<Image> Heart = new List<Image>();
     private int Count = 0;
     public string Player;
+    public GameObject Gamer;
+    private bool pl1;
+    private bool pl2;
     public void Start()
     {
         Reapear = GetComponent<Animator>();
@@ -31,6 +34,11 @@ public class Fire : MonoBehaviour
                             Debug.Log("Count" + Count);
                             Count++;
                         }
+                     if(Count>=3)
+                     {
+                       Gamer.SetActive(false);
+                       pl1= false;
+                     }
                 break;
 
             case "Player2":
@@ -42,10 +50,18 @@ public class Fire : MonoBehaviour
                     Debug.Log("Count" + Count);
                     Count++;
                 }
+                if (Count >=3)
+                {
+                    Gamer.SetActive(false);
+                    pl2 = false;
+                }
                 break;
         }
 
-
+        if(pl1 && pl2)
+        {
+            Time.timeScale = 0f;
+        }
     
 
 
