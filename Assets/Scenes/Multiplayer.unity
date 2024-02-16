@@ -7074,7 +7074,7 @@ GameObject:
   - component: {fileID: 397441203}
   m_Layer: 0
   m_Name: FirePl2
-  m_TagString: Fire2
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7474,6 +7474,7 @@ MonoBehaviour:
   - {fileID: 1328604572}
   Player: Player2
   Gamer: {fileID: 452449730}
+  Alive: 1
 --- !u!212 &452449733
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10015,6 +10016,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 216621095}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1048167934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1048167936}
+  - component: {fileID: 1048167935}
+  m_Layer: 0
+  m_Name: gameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1048167935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048167934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4165d5305de01fb4b975d6edb554bf1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMultiPlayer: 1
+  p1: {fileID: 1620690511}
+  p2: {fileID: 452449732}
+--- !u!4 &1048167936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048167934}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.17431885, y: -1.99282, z: 0.010341803}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1049970849
 GameObject:
   m_ObjectHideFlags: 0
@@ -11170,6 +11218,7 @@ MonoBehaviour:
   - {fileID: 2058565854}
   Player: Player1
   Gamer: {fileID: 1620690501}
+  Alive: 1
 --- !u!61 &1620690512
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25072,8 +25121,8 @@ EdgeCollider2D:
   m_Points:
   - {x: -9.032315, y: 4.989983}
   - {x: -9.03518, y: -4.9916234}
-  - {x: 13.000209, y: -4.996821}
-  - {x: 13.004821, y: 4.999437}
+  - {x: 8.992513, y: -5.0192094}
+  - {x: 8.997127, y: 4.999437}
   - {x: -9.076922, y: 4.9951797}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
@@ -30129,3 +30178,4 @@ SceneRoots:
   - {fileID: 1657817830}
   - {fileID: 601478267}
   - {fileID: 1709914499}
+  - {fileID: 1048167936}

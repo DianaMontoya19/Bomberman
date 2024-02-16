@@ -8,11 +8,7 @@ public class DestroyBlock : MonoBehaviour
     public Tilemap tilemap;
     public LayerMask layerMask;
     public GameObject Bomb;
-  
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     public void Update()

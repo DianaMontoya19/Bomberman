@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class Bomb : MonoBehaviour
 {
     public GameObject Player;
-     public GameObject bomb;
+    public GameObject bomb;
     public GameObject fire;
     public DestroyBlock Block;
     public string PL;
@@ -25,15 +25,6 @@ public class Bomb : MonoBehaviour
 
     void Update()
     {
-
-        //float Enter = Input.GetAxis(PL);
-
-        //if()
-        //{
-
-        //}
-        
-  
 
         if (Input.GetKeyDown(PL))
         {
@@ -55,21 +46,14 @@ public class Bomb : MonoBehaviour
  
 
 
-
-
     }
-  
-    //void OnDrawGizmosSelected()
-    //{
-    //    // Draws a 5 unit long red line in front of the object  
-    //    Gizmos.color = Color.red;
-    //    Vector3 direction = tf.TransformDirection(Vector3.right) * 1;
-    //    Gizmos.DrawRay(tf.position, direction);
-    //}
+
 
     public void activar()
     {
         fire.gameObject.SetActive(true);
+       
+
         Invoke("block", 0.5f);
         
        
@@ -78,6 +62,7 @@ public class Bomb : MonoBehaviour
     {
         
         fire.gameObject.SetActive(false);
+        
         Block.enabled = false;
     }
     public void block()
