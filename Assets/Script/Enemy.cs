@@ -5,32 +5,41 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public GameObject enemy;
-    //public int cantidad = 1;
-    private Vector2[] aleatorio;
-    //private Vector3 aletory;
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        for (int i = 0; i < 5; i++)
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-
-            aleatorio[i] = PosicionNueva();
-            
-
+            Debug.Log("colision");
+            Destroy(enemy);
         }
-       foreach (Vector2 posi in aleatorio)
-       {
-          Instantiate(enemy,posi,Quaternion.identity);
-       }
-
     }
+    //public GameObject enemy;
+    ////public int cantidad = 1;
+    //private Vector2[] aleatorio;
+    ////private Vector3 aletory;
+    //void Start()
+    //{
 
-    Vector2 PosicionNueva()
-    {
-        float positionX = Random.Range(-10, 10);
-        float positionY = Random.Range(-10, 10);
+    //    for (int i = 0; i < 5; i++)
+    //    {
 
-       return new Vector2(positionX, positionY);
-    }
+    //        aleatorio[i] = PosicionNueva();
+
+
+    //    }
+    //   foreach (Vector2 posi in aleatorio)
+    //   {
+    //      Instantiate(enemy,posi,Quaternion.identity);
+    //   }
+
+    //}
+
+    //Vector2 PosicionNueva()
+    //{
+    //    float positionX = Random.Range(-10, 10);
+    //    float positionY = Random.Range(-10, 10);
+
+    //   return new Vector2(positionX, positionY);
+    //}
 
 }

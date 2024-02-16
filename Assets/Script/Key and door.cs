@@ -10,16 +10,7 @@ public class Keyanddoor : MonoBehaviour
     public string Door;
     public Tilemap[] tilemap;
     public bool llave = false;
-    //void Start()
-    //{
 
-    //}
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(Key))

@@ -49,7 +49,7 @@ public class GrillMOve : MonoBehaviour
                 x += moveX;
                 canMove = false;
                 probar = true;
-                Debug.Log("iz");
+                
             }
 
             if (moveX >= 0 && !right)
@@ -58,7 +58,7 @@ public class GrillMOve : MonoBehaviour
                     canMove = false;
                     probar = true;
                     GetComponent<SpriteRenderer>().flipX = false;
-                    Debug.Log("de");
+                    
             }
             else
             {
@@ -76,7 +76,7 @@ public class GrillMOve : MonoBehaviour
                 y += moveY;
                 canMove = false;
                 enter = true;
-                Debug.Log("entro");
+               
               
 
             }
@@ -85,7 +85,7 @@ public class GrillMOve : MonoBehaviour
             {
                 y += moveY;
                 canMove = false;
-                Debug.Log("down");
+               
             }
 
         }
@@ -131,21 +131,5 @@ public class GrillMOve : MonoBehaviour
     {
         return new Vector2(x + 0.5f, y + 0.6f);
     }
-    //void OnDrawGizmosSelected()
-    //{
-    //    // Draws a 5 unit long red line in front of the object  
-    //    Gizmos.color = Color.red;
-    //    Vector3 direction = tf.TransformDirection(Vector3.up)* 0.5f;
-    //    Vector3 direction2 = tf.TransformDirection(Vector3.down) * 1f;
-    //    Vector3 direction3 = tf.TransformDirection(Vector3.right) * 1f;
-    //    Vector3 direction4 = tf.TransformDirection(Vector3.left) * 1f;
-
-    //    //Gizmos.DrawRay(tf.position, direction);
-    //    //Gizmos.DrawRay(tf.position, direction2);
-    //    Gizmos.DrawRay(tf.position, direction3);
-    //    Gizmos.DrawRay(tf.position, direction4);
-    //}
-
-
 
 }

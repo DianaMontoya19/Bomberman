@@ -10,6 +10,9 @@ TagManager:
   - Door1
   - Pl2
   - Door2
+  - Enemy
+  - Fire2
+  - powerUp
   layers:
   - Default
   - TransparentFX
