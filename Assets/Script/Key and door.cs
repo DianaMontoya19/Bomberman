@@ -31,6 +31,7 @@ public class Keyanddoor : MonoBehaviour
             if (llave)
             {
                 Destroy(tilemap[1].gameObject);
+                Time.timeScale = 0f;
                 Debug.Log("Puerta Abierta");
             }
         }

@@ -9,5 +9,10 @@ public class Menu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Multiplayer");
+   }
+    public void menu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Menu");
     }
 }
