@@ -20,7 +20,7 @@ public class Bomb : MonoBehaviour
 
     private void Start()
     {
-       //Deteccion=GetComponent<Fire>();    
+      
     }
 
     void Update()
