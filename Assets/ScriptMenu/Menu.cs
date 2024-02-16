@@ -5,15 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
-   public void Player1()
+    public void Player1()
     {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Player1");
+    }
+    public void Multiplayer()
+   {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Multiplayer");
    }
-    public void menu()
-    {
+   public void menu()
+   {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
-    }
+   }
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
@@ -56,12 +57,10 @@ public class Fire : MonoBehaviour
                     pl2 = false;
                 }
                 break;
+
         }
 
-        if(pl1 && pl2)
-        {
-            Time.timeScale = 0f;
-        }
+
     
 
 
