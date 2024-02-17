@@ -14,14 +14,14 @@ public class Fire : MonoBehaviour
     public GameObject Gamer;
     public bool Alive = true;
     
+    // me entra al componente del animator una animación que me permite poner a titilar al jugador.
     public void Start()
     {
         Reapear = GetComponent<Animator>();
-        
-       
 
     }
-
+    // si el jugador colisiona con el fuego de la explosion o con el enemigo, me active la animacion y me reduzca la vida.
+    // luego si la vida es mayor o igual a 3 entonces me descative al jugador y se muestre como si ya no existiera, para demostrar que murio.
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -41,10 +41,7 @@ public class Fire : MonoBehaviour
                      }
                     
 
-        //if(pl1 ==false&& pl2==false)
-        //{
-        //    Debug.Log("gameOver");
-        //}
+
 
     
 

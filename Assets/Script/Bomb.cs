@@ -15,16 +15,10 @@ public class Bomb : MonoBehaviour
     public string PL;
 
 
-    //public Transform tf;
-
-
-    private void Start()
-    {
-      
-    }
-
     void Update()
     {
+        // Si presiono la tecla especidica de cada jugador, player1 usa enter, player2 usa esc.
+        // si la presiona me crea una bomba.
 
         if (Input.GetKeyDown(PL))
         {
@@ -34,7 +28,7 @@ public class Bomb : MonoBehaviour
          
             GameObject Pl1 = Instantiate(bomb, pos , Quaternion.identity);
 
-            //activar();
+            
             
             Invoke("activar", 3f);
             Invoke("desactivar", 5f);
@@ -48,7 +42,8 @@ public class Bomb : MonoBehaviour
 
     }
 
-
+    // se usa para activar la explosion, solo se hace la funcion para usar el invoke, arriba y poder hacer que se active justo despues
+    // de que la animcaion de la bomba acabe.
     public void activar()
     {
         fire.gameObject.SetActive(true);
@@ -58,6 +53,8 @@ public class Bomb : MonoBehaviour
         
        
     }
+    // se usa para el invoke, me desactiva el script donde se me elimina el bloque, y luego en la siguiente funcion block me lo vuelve a activar
+    // esto con el fin de que el bloque se me destruya al tiempo en que el fuego sale.
     public void desactivar()
     {
         

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    // Realiza cambio de escenarios al oprimir botones, que se encuentran en unity,
     public void Player1()
     {
         Time.timeScale = 1f;

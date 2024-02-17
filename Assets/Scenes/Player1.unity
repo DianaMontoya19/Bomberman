@@ -10288,7 +10288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8574048189244545314, guid: dd7f573f1beec0144b466fb7ef8aacba, type: 3}
       propertyPath: m_Name
-      value: Circle
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8574048189244545314, guid: dd7f573f1beec0144b466fb7ef8aacba, type: 3}
       propertyPath: m_Layer

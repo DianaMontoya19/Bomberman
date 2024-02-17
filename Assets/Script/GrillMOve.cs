@@ -28,7 +28,9 @@ public class GrillMOve : MonoBehaviour
 
     private Rigidbody2D rb;
     
-
+    // me permite moverme en casillas, las condiciones de left, right, up y down, se hacen para eliminar un bug.
+    // Lo que me hace es que con el layermask, si me detecta el layermask, entoncesque no se mueva mas en esa direccion,
+    // pero que me permita seguir moviendo.
     void Start()
     {
         canMove = true;

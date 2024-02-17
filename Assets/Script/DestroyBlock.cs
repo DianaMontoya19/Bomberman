@@ -10,7 +10,8 @@ public class DestroyBlock : MonoBehaviour
     public GameObject Bomb;
 
 
-    // Update is called once per frame
+    // Todo el codigo me permite detectar por medio del layermask, los box, para destruir.
+    // se realiza varios raycast, en las direcciones, derecha, izquierda, arriba y abajo, si me lo detecta entonces que me lo destruya.
     public void Update()
     {
         Vector2 Origin = Bomb.transform.position;

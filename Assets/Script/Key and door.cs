@@ -13,6 +13,9 @@ public class Keyanddoor : MonoBehaviour
     public Tilemap[] tilemap;
     public bool llave = false;
 
+    //Al colisionar con la llave, que tiene diferente nombre para cada jugador, la llave me la destruye.
+    
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(Key))
@@ -24,6 +27,9 @@ public class Keyanddoor : MonoBehaviour
 
         }
     }
+
+    // Si recogio la llave y colisiona con la puerta puede entrar, pero solo cuando se recolecte la llave.
+    // luego me cambia la escena y me dice que jugador gano.
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
